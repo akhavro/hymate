@@ -27,7 +27,7 @@ for that datestamp. If there is, then the value is not updated, else, a new entr
 
 Also, the data is reorganized so that for each timestamp we only have the specific values of the weather parameters that were requested.
 That is, the objects that are written are as:
-```{
+`{
     'date': date,
     'temperature': temperature,
     'humidity': humidity,
@@ -37,4 +37,4 @@ That is, the objects that are written are as:
     'clodcover': cloudcover,
     'direct_radiation': direct_radiation,
     'diffuse_radiation': diffuse_radiation
-}```
+}`
