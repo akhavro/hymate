@@ -16,7 +16,7 @@ os.environ["AWS_LAMBDA_WEATHER_URL"] = \
 # AWS Lambda for running this code
 # DynamoDB (serverless)
 
-start_date = (dt.now() - timedelta(days=3)).strftime("%Y-%m-%d")
+start_date = (dt.now() - timedelta(days=2)).strftime("%Y-%m-%d")
 end_date = dt.now().strftime("%Y-%m-%d")
 
 url = os.getenv("AWS_LAMBDA_WEATHER_URL").format(start_date, end_date)
