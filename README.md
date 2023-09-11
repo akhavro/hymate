@@ -3,21 +3,28 @@ Hymate GmbH coding challenge
 
 **NOTE:** Every command to be run in this tutorial should be run from respective [PROJECT] folder.
 
+
 # PROJECT: Energy Management System
 This was written with **Django**. The database is a simple **SQLite3**, enough for the purpose.
 
+
 ## Installation/Execution:
 You can either install the app on your local machine, using a Virtual Environment, or run it from a Docker container.
+
 
 ### Locally (RECOMMENDED)
 
 **Requirements:** Python 3
 
 1 - Clone the git repository to your local machine
+
 2 - Set-up a virtual environment for the project and make sure it is active
+
 3 - From `energy_management_system` folder run:
 `pip install -r requirements.txt`
+
 4 - Run `python manage.py runserver` or `python manage.py runserver {PORT}` if you wish to run it on a different port (default=8000).
+
 5 - Access the printed url from a browser to make sure it is working.
 
 
@@ -26,8 +33,11 @@ You can either install the app on your local machine, using a Virtual Environmen
 **Requirements:** Docker
 
 1 - Clone the git repository to your local machine
+
 2 - From `energy_management_system` folder run:
+
 `docker build -t app .` and after it build the image `docker run -p 3000:3000 app`
+
 3 - Access `localhost:3000` from a browser to make sure it is working.
 
 
@@ -36,17 +46,24 @@ You can either install the app on your local machine, using a Virtual Environmen
 There are two steps in using the app which are described below:
 ### 1 - Setting up the simulation environment
 The system is composed by the following objects:
+
 - Producer
+
 - Consumer
+
 - Grid Access
+
 - Storage
 
 To be able to run the simulation we need to create at least one of these.
 There is **already one created**, but you can create a different one if you wish.
 
 1.1 - Go to `localhost:<port>/admin` from your browser
+
 1.2 - The login details are admin:admin being user:password (very secure :D)
+
 1.3 - On the left side click on `Consumers>Add` and you can create a new consumer along with the other objects related to it.
+
 
 **NOTE:** Although the admin UI lets you add several batteries and storages to a Consumer you should only add one, 
 because only one is then used by the algorithm. You can always change the Storage capacity by changing the objects that is already
@@ -61,7 +78,9 @@ You can do it on Docker, but you'd need to ssh to the container to retrieve file
 We need to input a file (in.csv) containing the rows: *pv_yield_power* and *household_consumption*, containing the information regarding energy produced and energy consumed, respectively. This file will be used as a model for the new file (out.csv), meaning that for each row another 3 columns are going to be added: *grid*, *storage* and *storage_current_level*, respectively meaning "power to/from Grid", "power to/from Storage" and "current amount of energy in Storage".
 
 1 - Copy your in.csv file to `energy_management_system` folder (the file should be located along manage.py)
+
 2 - Run `python manage.py runsimulation <consumer_id>`. The *consumer_id* is the ID of the consumer you want to run the simulation against.
+
 3 - An output file (out.csv) is created in the same folder, you can now check it and adjust your environment values in the `/admin` page as needed.
 
 **Meaning of the values:** the values in *grid* and *storage* are:
@@ -74,4 +93,4 @@ If you wish to run the automated tests, run: `python manage.py test`
 
 
 ## Architecture
-![plot](./energy_management_system/docs/img.png)
+![Screenshot](./energy_management_system/docs/img.png)
