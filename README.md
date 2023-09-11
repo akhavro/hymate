@@ -93,4 +93,12 @@ If you wish to run the automated tests, run: `python manage.py test`
 
 
 ## Architecture
+The core of the decision process regarding "where the energy should go" or "where the energy should come from" is defined in the *hygorithm* method, located at `core/hygorithm.py` file. The logic there is more or less what can be seen in the following diagram which represents an approximation of the energy flow, controlled by the app. The modules *PowerP*, *PowerC* and *PowerStorage* were not implemented in this project, but these would be responsible for managing several Producers, Consumers and Storages at the same time. Since in our case we only have one of each, the said modules were ignored.
+
+The energy can come either from Producers, from Storage or from Grid. While Producers never receive energy, the Storage and Grid may, in certain circumstances, such as:
+
+- Producers are producing in excess:
+    - The batteries will receive energy until the capacity is reached
+    - Grid will receive energy if batteries are full
+
 ![Screenshot](/energy_management_system/docs/hymate_1.png)
