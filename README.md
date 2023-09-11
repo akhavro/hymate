@@ -93,4 +93,4 @@ If you wish to run the automated tests, run: `python manage.py test`
 
 
 ## Architecture
-![Screenshot](/energy_management_system/docs/img.png)
+![Screenshot](/energy_management_system/docs/hymate_1.png)
