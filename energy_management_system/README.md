@@ -1,9 +1,3 @@
-# hymate
-Hymate GmbH coding challenge
-
-**NOTE:** Every command to be run in this tutorial should be run from respective [PROJECT] folder.
-
-
 # PROJECT: Energy Management System
 This was written with **Django**. The database is a simple **SQLite3**, enough for the purpose.
 
