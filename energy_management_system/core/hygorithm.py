@@ -33,7 +33,6 @@ def hygorithm(
     delta = consumed - produced     # if > 0 => "too much", if > 0 => "too little"
 
     if delta > 0:
-        print('too little was produced')
         storage = delta if delta < current_storage else current_storage
         grid = delta if current_storage == 0 else delta - current_storage
         return grid, storage
@@ -42,7 +41,6 @@ def hygorithm(
         return 0, 0
     
     else:
-        print('too much was produced')
         free_storage = maximum_storage - current_storage  # how much more energy can be stored
         grid = 0 if abs(delta) < free_storage else free_storage - abs(delta)
         storage = -free_storage if abs(delta) > free_storage else delta
