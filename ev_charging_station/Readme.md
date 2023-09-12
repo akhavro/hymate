@@ -26,6 +26,9 @@ The Reservations can be managed by users through a Flask API.
 
 ![Screenshot](/ev_charging_station/docs/EV_charging.drawio.png)
 
+### Database
+No database has been used, so all the data is stored in memory. **Once you restart the process, all the previously created data will be gone.**
+
 
 ## API usage
 
