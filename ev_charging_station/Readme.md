@@ -19,4 +19,4 @@ You can install the app on your local machine, using a Virtual Environment.
 
 
 ## Architecture
-![Screenshot](/docs/EV_charging.drawio.png)
+![Screenshot](/ev_charging_station/docs/EV_charging.drawio.png)
