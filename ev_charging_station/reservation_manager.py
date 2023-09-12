@@ -19,12 +19,12 @@ def make_reservation(
         charging_efficiency: float, 
         day_of_week: int,
         starting_hour: int, 
-        desired_charge: int
+        desired_charge: float
         ) -> dict:
     global user_reservations
 
     # Calculate the amount of slots of 15 min needed to charge to desired level
-    amount_of_slots = int(capacity_kwh / (max_charge_rate_kw * charging_efficiency) * 60 / 15)
+    amount_of_slots = int((capacity_kwh * desired_charge) / (max_charge_rate_kw * charging_efficiency) * 60 / 15)
     # cost = calculate_cost() ...
     parking_lot = get_available_parking_lot(day_of_week, starting_hour, amount_of_slots)
 
