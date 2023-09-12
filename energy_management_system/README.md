@@ -95,4 +95,4 @@ The energy can come either from Producers, from Storage or from Grid. While Prod
     - The batteries will receive energy until the capacity is reached
     - Grid will receive energy if batteries are full
 
-![Screenshot](/docs/hymate_1.png)
+![Screenshot](/energy_management_system/docs/hymate_1.png)
